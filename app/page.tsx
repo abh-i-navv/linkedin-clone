@@ -26,7 +26,10 @@ export default function Home() {
       <main>
         <div className="grid grid-cols-8 mt-5">
           <section className="hidden md:inline md:col-span-2">
-            {data && <UserInfo user={data} />}
+            {data ? 
+              <UserInfo user={data} /> :
+              <UserInfo user={{ name: "Guest", bio: "Please log in to see your profile." }} />
+            }
           </section>
 
           <section className="col-span-full md:col-span-4 mx-auto w-full">
